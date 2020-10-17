@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -34,10 +33,10 @@ public class Register extends AppCompatActivity {
 
         //Create instances of sign in components
 
-        inputEmail = findViewById(R.id.editTextEmailAddress);
-        inputPassword = findViewById(R.id.editTextPassword);
-        progressBar = findViewById(R.id.progressBar);
-        btnSignIn =  findViewById(R.id.registerbtn);
+        inputEmail = findViewById(R.id.loginemail);
+        inputPassword = findViewById(R.id.loginpass);
+        progressBar = findViewById(R.id.loginprogressBar);
+        btnSignIn =  findViewById(R.id.loginbtn);
 
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {

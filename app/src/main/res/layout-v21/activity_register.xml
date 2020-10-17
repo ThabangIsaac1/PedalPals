@@ -71,10 +71,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/loginpass" />
 
     <EditText
-        android:id="@+id/editTextEmailAddress"
+        android:id="@+id/loginemail"
         android:layout_width="356dp"
         android:layout_height="53dp"
         android:layout_marginTop="40dp"
@@ -83,7 +83,6 @@
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:text="@string/email"
         android:textColor="@color/colorAccent"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/loginpass"
         android:layout_width="362dp"
         android:layout_height="49dp"
         android:layout_marginTop="48dp"
@@ -106,10 +105,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.591"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/loginemail" />
 
     <ImageButton
-        android:id="@+id/registerbtn"
+        android:id="@+id/loginbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
@@ -119,15 +118,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.748"
-        app:srcCompat="@drawable/register" />
+        app:srcCompat="@drawable/register"
+        android:contentDescription="@string/app_name"/>
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/loginprogressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/registerbtn"
+        app:layout_constraintBottom_toTopOf="@+id/loginbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
