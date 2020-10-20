@@ -10,6 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -44,17 +45,34 @@ public class Login extends AppCompatActivity {
                 String email = loginemail.getText().toString().trim();
                 String password = loginpass.getText().toString().trim();
 
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (password.length() < 6) {
+                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                loginprogressBar.setVisibility(View.VISIBLE);
+
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-
+                            loginprogressBar.setVisibility(View.INVISIBLE);
                             FirebaseUser user = auth.getCurrentUser();
                             startActivity(new Intent(Login.this, Dashboard.class));
                             finish();
 
                         }else {
-
+                            loginprogressBar.setVisibility(View.INVISIBLE);
                             Toast.makeText(Login.this, "Sign in failed." + task.getException(),
                                     Toast.LENGTH_SHORT).show();
 
