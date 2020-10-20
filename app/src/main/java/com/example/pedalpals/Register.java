@@ -67,7 +67,7 @@ public class Register extends AppCompatActivity {
                         .addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(Register.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Register.this, "User Created   " + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
@@ -76,7 +76,7 @@ public class Register extends AppCompatActivity {
                                     Toast.makeText(Register.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(Register.this, MainActivity.class));
+                                    startActivity(new Intent(Register.this, Profile.class));
                                     finish();
                                 }
                             }
