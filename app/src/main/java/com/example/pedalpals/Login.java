@@ -38,6 +38,7 @@ public class Login extends AppCompatActivity {
         loginpass = findViewById(R.id.loginpass);
         loginbtn = findViewById(R.id.loginbtn);
         loginprogressBar = findViewById(R.id.loginprogressBar);
+        loginprogressBar.setVisibility(View.INVISIBLE);
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +85,13 @@ public class Login extends AppCompatActivity {
         });
 
 
+
+    }
+
+    public void routeRegister(View view) {
+
+        startActivity(new Intent(Login.this, Register.class));
+        finish();
 
     }
 }

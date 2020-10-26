@@ -87,4 +87,11 @@ public class Register extends AppCompatActivity {
 
         });
     }
+
+    public void routeLogin(View view) {
+
+        startActivity(new Intent(Register.this, Login.class));
+        finish();
+
+    }
 }
